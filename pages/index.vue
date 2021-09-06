@@ -3,8 +3,9 @@
     
     <NuxtLogo />
     <div class="row d-flex justify-content-around">
-      <Llista msg="Usuaris" class="bg-primary text-light text-center" style="width:45%" />
-      <Llista msg="Fotos" class="bg-warning text-center" style="width:45%" />
+      <Llista msg="Usuaris" class="bg-primary text-light text-center" style="width:30%" />
+      <Llista msg="Albums" class="bg-warning text-center" style="width:30%" />
+      <Llista msg="Fotos" class="bg-success text-light text-center" style="width:30%" />
     </div>
   </div>
 </template>

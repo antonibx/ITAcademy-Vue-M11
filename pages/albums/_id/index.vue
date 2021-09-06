@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import {mapState, mapMutations} from 'vuex'
 import axios from 'axios';
 
 export default {
@@ -27,10 +28,15 @@ export default {
             album: this.$route.params.id
         }
     },
+    computed: mapState(['albums','albumsVisitats']),
+    methods: {
+        ...mapMutations(['visita'])
+    },
     async created() {
         try {
             const response = await axios.get('http://jsonplaceholder.typicode.com/photos/');
             this.fotos = response.data;
+            this.visita({dada: this.album, tipus: "album"})
         } catch (error) {
             console.log(error);
         }

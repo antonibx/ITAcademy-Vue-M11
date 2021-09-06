@@ -10,6 +10,8 @@ export const state = () => ({
   usuarisVisitats: [],
   fotos: [],
   fotosVisitades: [],
+  albums: [],
+  albumsVisitats: [],
   //Per les cerques
   cerca: '',
   resultats: [],
@@ -42,6 +44,18 @@ export const mutations = {
         llista = state.fotosVisitades;
         llista.forEach((element, index) => {
           if(element[0].title==nouElement.dada.title) {
+            element[1]++;
+            posicio = index;
+          }
+        });
+        if (posicio ==-1){
+          llista.push([nouElement.dada, 1]);
+        }
+        break;
+      case "album":
+        llista = state.albumsVisitats;
+        llista.forEach((element, index) => {
+          if(element[0]==nouElement.dada) {
             element[1]++;
             posicio = index;
           }
